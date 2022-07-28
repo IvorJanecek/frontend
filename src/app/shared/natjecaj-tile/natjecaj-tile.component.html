@@ -1,0 +1,32 @@
+<div class="row post" *ngFor="let natjecaj of natjecajs">
+    <!-- Section to Display Votes-->
+    <div class="col-md-1">
+      <div class="d-flex flex-column votebox">
+        <div class="p-2">
+          
+        </div>
+      </div>
+    </div>
+    <!-- Section to Display Post Information-->
+    <div class="col-md-11">
+      <span class="mobilnost-info">
+        <span class="mobilnost-text"><a class="natjecajurl" routerLink="">{{natjecaj.mobilnostName}}</a></span>
+        <span> . Posted by <a class="username" routerLink="/user/{{natjecaj.userName}}">{{natjecaj.userName}}</a></span>
+       
+      </span>
+      <hr />
+      <div class="natjecaj-title">
+        <a class="natjecajname" href="{{natjecaj.url}}">{{natjecaj.natjecajName}}</a>
+      </div>
+      <div>
+        <p class="natjecaj-text">{{natjecaj.description}}</p>
+      </div>
+      <hr />
+      <span>
+        
+        <button class="login" (click)="goToNatjecaj(natjecaj.id)">
+          Read Post
+        </button>
+      </span>
+    </div>
+  </div>
