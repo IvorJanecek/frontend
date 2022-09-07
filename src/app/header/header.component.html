@@ -1,5 +1,17 @@
 <header>
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div *ngIf="isLoggedIn" ngbDropdown class="float-left">
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button (click)="goToUserProfile()" ngbDropdownItem>Natjecaji</button>
+            <button ngbDropdownItem>MojaMobilnost</button>
+            <button ngbDropdownItem>Dokumenti</button>
+            <button (click)="goToUgovori()" ngbDropdownItem>Ugovori</button>
+        </div>
+        <button class="MENU" id="dropdownBasic1" ngbDropdownToggle>
+            
+            MENU
+        </button>
+    </div> 
       <div class="flex-grow-1">
           <a aria-label="Home" class="logo" routerLink="/">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="reddit-icon-svg">
@@ -10,8 +22,8 @@
                       </path>
                   </g>
               </svg>
-              <span class="reddit-text">
-                  Spring Reddit Clone
+              <span class="erasmus-text">
+                  Erasmus Web aplikacija
               </span>
           </a>
       </div>
@@ -20,6 +32,8 @@
               <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                   <button (click)="goToUserProfile()" ngbDropdownItem>Profile</button>
                   <button (click)="logout()" ngbDropdownItem>Logout</button>
+                  <button (click)="goToChangePassword()" ngbDropdownItem>Promjeni sifru</button>
+                  <button (click)="goToMojiNatjecaji()" ngbDropdownItem>Moji natjecaji</button>
               </div>
               <button class="userdetails" id="dropdownBasic1" ngbDropdownToggle>
                   <img class="account-icon" src="https://www.redditstatic.com/avatars/avatar_default_08_D4E815.png">

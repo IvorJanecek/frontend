@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+      <hr />
+      <div class="create-mobilnost-container col-md-9">
+        <form class="mobilnost-form" [formGroup]="createMobilnostForm" (ngSubmit)="createMobilnost()">
+          <div class="form-group">
+            <div class="create-mobilnost-heading">Create Natjecaj</div>
+            <hr />
+            <input type="text" [formControlName]="'mobilnostName'" class="form-control" style="margin-top: 5px"
+              placeholder="Title">
+  
+            <input type="text" class="form-control" [formControlName]="'url'" style="margin-top: 5px" placeholder="URL">
+  
+            <select class="form-control" style="margin-top: 10px" [formControlName]="'natjecajName'">
+              <option value="" selected disabled>Select Natjecaj</option>
+              <option *ngFor="let natjecaj of natjecajs">{{natjecaj.name}}</option>
+            </select>
+  
+            <editor [formControlName]="'description'" [init]="{
+                        height: 500,
+                        menubar: false,
+                        plugins: [
+                          'advlist autolink lists link image charmap print preview anchor',
+                          'searchreplace visualblocks code fullscreen',
+                          'insertdatetime media table paste code help wordcount'
+                        ],
+                        toolbar:
+                          'undo redo | formatselect | bold italic backcolor | \
+                          alignleft aligncenter alignright alignjustify | \
+                          bullist numlist outdent indent | removeformat | help'
+                      }"></editor>
+            <span>
+              <div style="margin-top: 5px" class="float-right">
+                <button (click)="discardMobilnost()" class="btnDiscard">Discard</button>
+                <button class="btnCreateMobilnost">Napravi</button>
+              </div>
+            </span>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-3">
+        
+      </div>
+    </div>
+  </div>

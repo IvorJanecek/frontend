@@ -1,0 +1,11 @@
+<div class="sidebar-view-natjecaj">
+    <div style="color: black; font-weight: bold">Pretrazi Natjecaj</div>
+    <hr />
+    <span *ngFor="let natjecaj of natjecajs">
+        <span class="natjecaj-text"><a href="view-natjecaj/{{natjecaj.id}}">{{natjecaj.name}}</a></span>
+        <hr />
+    </span>
+    <div style="text-align: center" *ngIf="displayViewAll">
+        <a style="font-weight: bold" routerLink="list-natjecajs">View All</a>
+    </div>
+</div>

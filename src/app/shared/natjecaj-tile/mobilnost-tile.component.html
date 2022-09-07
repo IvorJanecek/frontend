@@ -1,0 +1,34 @@
+<div class="row post" *ngFor="let mobilnost of mobilnosti">
+    <!-- Section to Display Votes-->
+    <div class="col-md-1">
+      <div class="d-flex flex-column votebox">
+        <div class="p-2">
+          
+        </div>
+      </div>
+    </div>
+    <!-- Section to Display Post Information-->
+    <div class="col-md-11">
+      <span class="mobilnost-info">
+        <span class="mobilnost-text"><a class="mobilnosturl" routerLink="">{{mobilnost.mobilnostName}}</a></span>
+        <span> . Posted by <a class="username" routerLink="/user/{{mobilnost.userName}}">{{mobilnost.userName}}</a></span>
+       
+      </span>
+      <hr />
+      <div class="natjecaj-title">
+        <a class="natjecajname" href="{{mobilnost.url}}">{{mobilnost.natjecajName}}</a>
+      </div>
+      <div>
+        <p class="natjecaj-text">{{mobilnost.description}}</p>
+      </div>
+      <hr />
+      <span>
+
+        <span class="mobilnost-text"><a class="natjecajurl" routerLink="">status</a></span>
+        
+        <button class="login" (click)="goToMobilnost(mobilnost.id)">
+          Read Post
+        </button>
+      </span>
+    </div>
+  </div>

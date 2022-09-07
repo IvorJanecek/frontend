@@ -6,18 +6,26 @@ import { HomeComponent } from './home/home.component';
 
 import { UserProfileComponent } from './auth/user-profile/user-profile.component';
 import { AuthGuard } from './auth/guard';
-import { ViewNatjecajComponent } from './natjecaj/view-natjecaj/view-natjecaj.component';
-import { CreateNatjecajComponent } from './natjecaj/create-natjecaj/create-natjecaj.component';
-import { ListMobilnostsComponent } from './mobilnost/list-mobilnosts/list-mobilnosts.component';
-import { CreateMobilnostComponent } from './mobilnost/create-mobilnost/create-mobilnost.component';
+import { ViewMobilnostComponent } from './natjecaj/view-natjecaj/view-mobilnost.component';
+import { CreateMobilnostComponent } from './natjecaj/create-natjecaj/create-mobilnost.component';
+import { ListNatjecajsComponent } from './mobilnost/list-mobilnosts/list-natjecajs.component';
+import {  CreateNatjecajComponent } from './mobilnost/create-mobilnost/create-natjecaj.component';
+import { ChangepasswordComponent } from './auth/changepassword/changepassword.component';
+import { MojiNatjecajiComponent } from './auth/moji-natjecaji/moji-natjecaji.component';
+import { ViewNatjecajComponent } from './mobilnost/view-natjecaj/view-natjecaj.component';
+import { UgovoriComponent } from './shared/ugovori/ugovori.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'create-natjecaj', component: CreateNatjecajComponent},
-  {path : 'view-natjecaj/:id', component: ViewNatjecajComponent },
+  { path: 'create-natjecaj', component: CreateNatjecajComponent,canActivate: [AuthGuard]},
+  { path : 'view-mobilnost/:id', component: ViewMobilnostComponent },
+  { path: 'view-natjecaj/:id', component:ViewNatjecajComponent},
+  { path: 'ugovori', component:UgovoriComponent},
   { path: 'user-profile/:name', component: UserProfileComponent, canActivate: [AuthGuard] },
-  { path: 'create-mobilnost', component: CreateMobilnostComponent},
-  { path: 'list-mobilnosts', component: ListMobilnostsComponent },
+  { path: 'promjeni-sifru/:name', component: ChangepasswordComponent, canActivate: [AuthGuard] },
+  { path: 'create-mobilnost', component: CreateMobilnostComponent, canActivate: [AuthGuard]},
+  { path: 'list-natjecajs', component: ListNatjecajsComponent },
+  { path: 'moji-natjecaji/:name', component: MojiNatjecajiComponent, canActivate: [AuthGuard] },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'login', component: LoginComponent }
 ];

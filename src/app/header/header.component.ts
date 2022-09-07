@@ -23,6 +23,16 @@ export class HeaderComponent implements OnInit {
   goToUserProfile() {
     this.router.navigateByUrl('/user-profile/' + this.username);
   }
+  goToChangePassword() {
+    this.router.navigateByUrl('/promjeni-sifru/' + this.username);
+  }
+  goToMojiNatjecaji() {
+    this.router.navigateByUrl('/moji-natjecaji/' + this.username);
+  }
+
+  goToUgovori() {
+    this.router.navigateByUrl('/ugovori');
+  }
   logout() {
     this.authService.logout();
     this.isLoggedIn = false;

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NatjecajService } from 'src/app/shared/natjecaj.service';
-import { NatjecajModel } from 'src/app/shared/natjecaj-model';
+import { MobilnostService } from 'src/app/shared/mobilnost.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -10,20 +9,17 @@ import { NatjecajModel } from 'src/app/shared/natjecaj-model';
 })
 export class UserProfileComponent implements OnInit {
   name: string;
-  natjecajs?: NatjecajModel[];
-  natjecajLength!: number;
+  username!: string;
 
-  constructor(private activatedRoute: ActivatedRoute, private natjecajService: NatjecajService) {
+  constructor(private activatedRoute: ActivatedRoute, private mobilnostService: MobilnostService,) {
     this.name = this.activatedRoute.snapshot.params['name'];
 
-    this.natjecajService.getAllNatjecajsByUser(this.name).subscribe(data => {
-      this.natjecajs = data;
-      this.natjecajLength = data.length;
-    });
+      
     
   }
 
   ngOnInit(): void {
+    
   }
 
 }

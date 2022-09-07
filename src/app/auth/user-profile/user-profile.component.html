@@ -1,183 +1,24 @@
-<!DOCTYPE html>
-
-<html>
-
-<head>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-</head>
-
-<body ng-app="app" ng-init="skills=['html','css','javascript','jQuery','vue.js','angular.js']" ng-controller="cont">
-
-<div class="container">
-
-  <h2>Bootstrap angular profile</h2>
-
- 
-
-  <div class="panel-group" id="accordion">
-
-    <div class="panel panel-default">
-
-      <div class="panel-heading">
-
-        <h4 class="panel-title">
-
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Login data</a>
-
-        </h4>
-
+<div class="container rounded bg-white mt-5 mb-5">
+  <div class="row">
+      <div class="col-md-3 border-right">
+          <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
       </div>
-
-      <div id="collapse1" class="panel-collapse collapse in">
-
-        <div class="panel-body">
-
-<form 
-
-name="myForm" class="form-group">
-
-<p>Username:<br>
-
-<input class="form-control" type="text" name="user" ng-model="user" required>
-
-<br>
-
-<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
-
-<span ng-show="myForm.user.$error.required">Username is required.</span>
-
-</span>
-
-</p>
-
-<p>Password:<br>
-
-<input class="form-control" type="password" name="password" ng-model="password" required>
-
-<br>
-
-<span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
-
-<span ng-show="myForm.password.$error.required">Password is required.</span>
-
-<span ng-show="myForm.password.$error.password">Invalid password.</span>
-
-</span>
-
-</p>
-
-<p>Email:<br>
-
-<input class="form-control" type="email" name="email" ng-model="email" required>
-
-<br>
-
-<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
-
-<span ng-show="myForm.email.$error.required">Email is required.</span>
-
-<span ng-show="myForm.email.$error.email">Invalid email address.</span>
-
-</span>
-
-</p>
-
-</form></div>
-
+      <div class="col-md-5 border-right">
+          <div class="p-3 py-5">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4 class="text-right">Profile Settings</h4>
+              </div>
+              <div class="row mt-2">
+                  <div class="col-md-6"><label class="labels">Ime</label><input type="text" class="form-control" placeholder="Ime" value=""></div>
+                  <div class="col-md-6"><label class="labels">Prezime</label><input type="text" class="form-control" value="" placeholder="Prezime"></div>
+              </div>
+              <div class="row mt-3">
+                  <div class="col-md-12"><label class="labels">Kontakt</label><input type="text" class="form-control" placeholder="Unesite broj mobitela" value=""></div>
+                  <div class="col-md-12"><label class="labels">Addresa Stanovanja</label><input type="text" class="form-control" placeholder="Adresa Stanovanja" value=""></div>
+                  <div class="col-md-12"><label class="labels">Datum Rođenja</label><input type="text" class="form-control" placeholder="Datum Rođenja" value=""></div>
+              </div>
+              <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+          </div>
       </div>
-
-    
-
-      </div>
-
-          <div class="panel panel-default">
-
-      <div class="panel-heading">
-
-        <h4 class="panel-title">     <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Skills</a>
-
-        </h4>
-
-      </div>
-
-    </div>
-
-        <div class="panel panel-default">
-
-      <div class="panel-heading">
-
-        <h4 class="panel-title">
-
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Task list</a>
-
-        </h4>
-
-      </div>
-
-      
-
-    </div>
-
-    <div class="panel panel-default">
-
-      <div class="panel-heading">
-
-        <h4 class="panel-title">
-
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Information of user</a>
-
-        </h4>
-
-      </div>
-
-      <div id="collapse4" class="panel-collapse collapse">
-
-        <div class="panel-body">
-
-<form class="form-group"
-
-name="info">
-
-<p>Country:<br>
-
-<input class="form-control" type="text" name="country" ng-model="coutry" required>
-
-</p>
-
-<p>City:<br>
-
-<input class="form-control" type="text" name="city" ng-model="city" required>
-
-</p>
-
-<p>
-
-</p>
-
-</form></div>
-
-      </div>
-
-    </div>
-
-  </div> 
-
+  </div>
 </div>
-
-   
-
-</body>
-
-</html>

@@ -4,7 +4,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { AuthModule } from './auth/auth.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,36 +12,57 @@ import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TokenInterceptor } from './auth/token-interceptor';
-import { NatjecajTileComponent } from './shared/natjecaj-tile/natjecaj-tile.component';
+import { MobilnostTileComponent } from './shared/natjecaj-tile/mobilnost-tile.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
-import { MobilnostSideBarComponent } from './shared/subreddit-side-bar/mobilnost-side-bar.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CreateMobilnostComponent } from './mobilnost/create-mobilnost/create-mobilnost.component';
-import { CreateNatjecajComponent } from './natjecaj/create-natjecaj/create-natjecaj.component';
-import { ViewNatjecajComponent } from './natjecaj/view-natjecaj/view-natjecaj.component';
-import { ListMobilnostsComponent } from './mobilnost/list-mobilnosts/list-mobilnosts.component';
+import { UploadFilesComponent } from './UploadFiles/upload-files/upload-files.component';
+import { ChangepasswordComponent } from './auth/changepassword/changepassword.component';
+import { LoginComponent } from './auth/login/login.component';
+import { MojiNatjecajiComponent } from './auth/moji-natjecaji/moji-natjecaji.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { UserProfileComponent } from './auth/user-profile/user-profile.component';
+import { ListNatjecajsComponent } from './mobilnost/list-mobilnosts/list-natjecajs.component';
+import { ViewMobilnostComponent } from './natjecaj/view-natjecaj/view-mobilnost.component';
+import { CreateNatjecajComponent } from './mobilnost/create-mobilnost/create-natjecaj.component';
+import { CreateMobilnostComponent } from './natjecaj/create-natjecaj/create-mobilnost.component';
+import { NatjecajSideBarComponent } from './shared/subreddit-side-bar/natjecaj-side-bar.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import { ViewNatjecajComponent } from './mobilnost/view-natjecaj/view-natjecaj.component';
+import { UploadUgovorComponent } from './ugovori/upload-ugovor/upload-ugovor.component';
+import { UgovoriComponent } from './shared/ugovori/ugovori.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    NatjecajTileComponent,
+    MobilnostTileComponent,
     SideBarComponent,
-    MobilnostSideBarComponent,
-    CreateMobilnostComponent,
+    NatjecajSideBarComponent,
     CreateNatjecajComponent,
-    ListMobilnostsComponent,
     CreateMobilnostComponent,
-    CreateNatjecajComponent,
-    ViewNatjecajComponent
+    ViewMobilnostComponent,
+    ListNatjecajsComponent,
+    UploadFilesComponent,
+    SignUpComponent,
+    LoginComponent,
+    UserProfileComponent,
+    ChangepasswordComponent,
+    MojiNatjecajiComponent,
+    ViewNatjecajComponent,
+    UploadUgovorComponent,
+    UgovoriComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AuthModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -51,7 +71,13 @@ import { ListMobilnostsComponent } from './mobilnost/list-mobilnosts/list-mobiln
     ToastrModule.forRoot(),
     FontAwesomeModule,
     EditorModule,
-    NgbModule
+    NgbModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatRippleModule,
+    MatInputModule,
+    MatIconModule
   ],
   providers: [   {
     provide: HTTP_INTERCEPTORS,

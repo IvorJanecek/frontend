@@ -1,0 +1,26 @@
+
+<div class="container">
+    <div class="row">
+      <hr />
+      <div class="col-md-9">
+        <div class="row natjecaj">
+          
+          <div class="col-md-11">
+            <span>
+              <span class="natjecaj-text"><a class="natjecaj-url" href="">{{natjecaj.name}}</a></span>
+                                      
+            </span>
+            <hr />
+            <a routerLink="natjecaj.url" class="natjecaj-title">{{natjecaj.name}}</a>
+            <div>
+              <p class="natjecaj-text" [innerHtml]="natjecaj.description"></p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        
+      </div>
+    </div>
+  </div>

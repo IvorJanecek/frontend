@@ -1,0 +1,29 @@
+
+<div class="container">
+    <div class="row">
+      <hr />
+      <div class="col-md-9">
+        <div class="row mobilnost">
+          
+          <div class="col-md-11">
+            <span>
+              <span class="mobilnost-text"><a class="mobilnost-url" href="">{{mobilnost.mobilnostName}</a></span>
+              <span> . Posted 
+                  by
+                 <a class="username" href="">{{mobilnost.userName}}</a>
+              </span>                        
+            </span>
+            <hr />
+            <a routerLink="mobilnost.url" class="mobilnost-title">{{mobilnost.natjecajName}</a>
+            <div>
+              <p class="mobilnost-text" [innerHtml]="mobilnost.description"></p>
+            </div>
+            <app-upload-files></app-upload-files>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        
+      </div>
+    </div>
+  </div>
