@@ -12,7 +12,7 @@ import { MobilnostModel } from 'src/app/shared/mobilnost-model';
 })
 export class ViewMobilnostComponent implements OnInit {
 
-  mobilnostId!: number;
+  mobilnostId: number;
   mobilnost!: MobilnostModel;
 
   constructor(private mobilnostService: MobilnostService, private activateRoute: ActivatedRoute,

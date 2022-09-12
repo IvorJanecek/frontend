@@ -33,6 +33,9 @@ export class HeaderComponent implements OnInit {
   goToUgovori() {
     this.router.navigateByUrl('/ugovori');
   }
+  goToListUser() {
+    this.router.navigateByUrl('/users');
+  }
   logout() {
     this.authService.logout();
     this.isLoggedIn = false;

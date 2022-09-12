@@ -14,9 +14,13 @@ import { ChangepasswordComponent } from './auth/changepassword/changepassword.co
 import { MojiNatjecajiComponent } from './auth/moji-natjecaji/moji-natjecaji.component';
 import { ViewNatjecajComponent } from './mobilnost/view-natjecaj/view-natjecaj.component';
 import { UgovoriComponent } from './shared/ugovori/ugovori.component';
+import { ListUserComponent } from './admin/list-user/list-user.component';
+import { UserDetailsComponent } from './admin/user-details/user-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
+  { path: 'users', component:ListUserComponent},
+  { path: 'details/:id', component:UserDetailsComponent},
   { path: 'create-natjecaj', component: CreateNatjecajComponent,canActivate: [AuthGuard]},
   { path : 'view-mobilnost/:id', component: ViewMobilnostComponent },
   { path: 'view-natjecaj/:id', component:ViewNatjecajComponent},

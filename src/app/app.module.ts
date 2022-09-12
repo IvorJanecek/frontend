@@ -27,14 +27,11 @@ import { ViewMobilnostComponent } from './natjecaj/view-natjecaj/view-mobilnost.
 import { CreateNatjecajComponent } from './mobilnost/create-mobilnost/create-natjecaj.component';
 import { CreateMobilnostComponent } from './natjecaj/create-natjecaj/create-mobilnost.component';
 import { NatjecajSideBarComponent } from './shared/subreddit-side-bar/natjecaj-side-bar.component';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatIconModule} from '@angular/material/icon';
 import { ViewNatjecajComponent } from './mobilnost/view-natjecaj/view-natjecaj.component';
 import { UploadUgovorComponent } from './ugovori/upload-ugovor/upload-ugovor.component';
 import { UgovoriComponent } from './shared/ugovori/ugovori.component';
+import { ListUserComponent } from './admin/list-user/list-user.component';
+import { UserDetailsComponent } from './admin/user-details/user-details.component';
 
 
 @NgModule({
@@ -57,7 +54,9 @@ import { UgovoriComponent } from './shared/ugovori/ugovori.component';
     MojiNatjecajiComponent,
     ViewNatjecajComponent,
     UploadUgovorComponent,
-    UgovoriComponent
+    UgovoriComponent,
+    ListUserComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -71,13 +70,7 @@ import { UgovoriComponent } from './shared/ugovori/ugovori.component';
     ToastrModule.forRoot(),
     FontAwesomeModule,
     EditorModule,
-    NgbModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatFormFieldModule,
-    MatRippleModule,
-    MatInputModule,
-    MatIconModule
+    NgbModule
   ],
   providers: [   {
     provide: HTTP_INTERCEPTORS,

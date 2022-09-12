@@ -1,6 +1,6 @@
 export class NatjecajModel {
     id?: number;
-    name?: string;
+    name!: string;
     description?: string;
     numberOfMobilnosts?: number;
     Od? : Date;

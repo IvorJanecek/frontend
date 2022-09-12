@@ -10,7 +10,7 @@ import { throwError } from 'rxjs';
 })
 export class ListNatjecajsComponent implements OnInit {
 
-  natjecajs!: Array<NatjecajModel>;
+  natjecajs?: Array<NatjecajModel>;
   constructor(private natjecajService: NatjecajService) { }
 
   ngOnInit() {

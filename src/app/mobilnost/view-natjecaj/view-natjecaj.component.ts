@@ -19,7 +19,7 @@ export class ViewNatjecajComponent implements OnInit {
 
     }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getNatjecaj();
   }
 

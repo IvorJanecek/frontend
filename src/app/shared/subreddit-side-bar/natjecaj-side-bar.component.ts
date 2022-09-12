@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NatjecajService } from 'src/app/mobilnost/natjecaj.service';
 import {  NatjecajModel } from 'src/app/mobilnost/natjecaj-model';
 import { Router } from '@angular/router';
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./natjecaj-side-bar.component.css']
 })
 export class NatjecajSideBarComponent implements OnInit {
-  natjecajs!: Array<NatjecajModel> ;
+  @Input() natjecajs!: Array<NatjecajModel> ;
   displayViewAll!: boolean;
 
   constructor(private natjecajService: NatjecajService, private router: Router) {
