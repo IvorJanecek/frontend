@@ -12,7 +12,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TokenInterceptor } from './auth/token-interceptor';
-import { MobilnostTileComponent } from './shared/natjecaj-tile/mobilnost-tile.component';
+import { MobilnostTileComponent } from './shared/mobilnost-tile/mobilnost-tile.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -32,6 +32,10 @@ import { UploadUgovorComponent } from './ugovori/upload-ugovor/upload-ugovor.com
 import { UgovoriComponent } from './shared/ugovori/ugovori.component';
 import { ListUserComponent } from './admin/list-user/list-user.component';
 import { UserDetailsComponent } from './admin/user-details/user-details.component';
+import { NatjecajTileComponent } from './shared/natjecaj-tile/natjecaj-tile.component';
+import { MaterialModule } from './material/material.module';
+import { ListPrijaveComponent } from './admin/list-prijave/list-prijave.component';
+import { ListaNatjComponent } from './admin/lista-natj/lista-natj.component';
 
 
 @NgModule({
@@ -56,7 +60,10 @@ import { UserDetailsComponent } from './admin/user-details/user-details.componen
     UploadUgovorComponent,
     UgovoriComponent,
     ListUserComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    NatjecajTileComponent,
+    ListPrijaveComponent,
+    ListaNatjComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +77,8 @@ import { UserDetailsComponent } from './admin/user-details/user-details.componen
     ToastrModule.forRoot(),
     FontAwesomeModule,
     EditorModule,
-    NgbModule
+    NgbModule,
+    MaterialModule
   ],
   providers: [   {
     provide: HTTP_INTERCEPTORS,

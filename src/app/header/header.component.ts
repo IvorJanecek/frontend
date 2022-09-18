@@ -36,6 +36,9 @@ export class HeaderComponent implements OnInit {
   goToListUser() {
     this.router.navigateByUrl('/users');
   }
+  gotoView() {
+    this.router.navigateByUrl('/list-natj');
+  }
   logout() {
     this.authService.logout();
     this.isLoggedIn = false;

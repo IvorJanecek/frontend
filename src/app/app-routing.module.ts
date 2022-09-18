@@ -16,10 +16,15 @@ import { ViewNatjecajComponent } from './mobilnost/view-natjecaj/view-natjecaj.c
 import { UgovoriComponent } from './shared/ugovori/ugovori.component';
 import { ListUserComponent } from './admin/list-user/list-user.component';
 import { UserDetailsComponent } from './admin/user-details/user-details.component';
+import { ListPrijaveComponent } from './admin/list-prijave/list-prijave.component';
+import { ListaNatjComponent } from './admin/lista-natj/lista-natj.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
+  { path: 'list-prij/:id', component:ListPrijaveComponent},
+  { path: 'list-natj', component:ListaNatjComponent},
   { path: 'users', component:ListUserComponent},
+  { path: 'details/:id', component:UserDetailsComponent},
   { path: 'details/:id', component:UserDetailsComponent},
   { path: 'create-natjecaj', component: CreateNatjecajComponent,canActivate: [AuthGuard]},
   { path : 'view-mobilnost/:id', component: ViewMobilnostComponent },

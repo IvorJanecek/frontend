@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NatjecajModel } from '../mobilnost/natjecaj-model';
+import { NatjecajService } from '../mobilnost/natjecaj.service';
 import { MobilnostModel } from '../shared/mobilnost-model';
 import { MobilnostService} from '../shared/mobilnost.service';
 
@@ -9,11 +11,11 @@ import { MobilnostService} from '../shared/mobilnost.service';
 })
 export class HomeComponent implements OnInit {
 
-  mobilnosti: Array<MobilnostModel> = [];
+  natjecaji: Array<NatjecajModel> = [];
 
-  constructor(private mobilnostService: MobilnostService) {
-    this.mobilnostService.getAllMobilnosts().subscribe(mobilnosti => {
-      this.mobilnosti = mobilnosti;
+  constructor(private natjecajService: NatjecajService) {
+    this.natjecajService.getAllNatjecajs().subscribe(natjecaji => {
+      this.natjecaji = natjecaji;
     }); 
   }
 

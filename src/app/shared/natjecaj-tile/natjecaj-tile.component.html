@@ -1,0 +1,26 @@
+<div class="row natjecaj" *ngFor="let natjecaj of natjecaji">
+    
+    <!-- Section to Display Post Information-->
+    <div class="col-md-11">
+      <span class="natjecaj-info">
+        <span class="natjecaj-text"><a class="natjecajurl" routerLink="">{{natjecaj.name}}</a></span>
+        
+       
+      </span>
+      <hr />
+      <div class="natjecaj-title">
+        
+        <p class="natjecaj-text">{{natjecaj.description}}</p>
+      </div>
+      <hr />
+      <span>
+
+        <span class="natjecaj-text"><a class="natjecaj-info" >Natjecaj traje od: {{natjecaj.datumOd | date : 'yyyy/MM/dd'}} </a></span>
+        <span class="natjecaj-text"><a class="natjecaj-info" > Do:  {{natjecaj.datumDo | date : 'yyyy/MM/dd'}} </a></span>
+        
+        <button class="login" (click)="goToNatjecaj(natjecaj.id)">
+          Prijavi se na natjecaj
+        </button>
+      </span>
+    </div>
+  </div>

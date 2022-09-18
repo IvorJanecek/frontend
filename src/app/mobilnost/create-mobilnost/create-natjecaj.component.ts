@@ -14,16 +14,25 @@ export class CreateNatjecajComponent implements OnInit {
   natjecajModel: NatjecajModel;
   title = new FormControl('');
   description = new FormControl('');
+  ustanova = new FormControl('');
+  datumOd = new FormControl('');
+  datumDo = new FormControl('');
 
   constructor(private router: Router, private natjecajService: NatjecajService) {
     this.createNatjecajForm = new FormGroup({
       title: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required)
+      description: new FormControl('', Validators.required),
+      ustanova : new FormControl('', Validators.required),
+      datumOd : new FormControl('', Validators.required),
+      datumDo : new FormControl('', Validators.required)
       
     });
     this.natjecajModel = {
       name: '',
-      description: ''
+      description: '',
+      datumOd: new Date,
+      datumDo: new Date,
+      ustanova: ''
     }
   }
 
@@ -34,13 +43,21 @@ export class CreateNatjecajComponent implements OnInit {
     this.router.navigateByUrl('/');
   }
 
+  submit(){
+    console.log(this.createNatjecajForm.value);
+  }
   createNatjecaj() {
     this.natjecajModel.name = this.createNatjecajForm.get('title')!.value;
     this.natjecajModel.description = this.createNatjecajForm.get('description')!.value;
+    this.natjecajModel.ustanova = this.createNatjecajForm.get('ustanova')!.value;
+    this.natjecajModel.datumOd = this.createNatjecajForm.get('datumOd')!.value;
+    this.natjecajModel.datumDo = this.createNatjecajForm.get('datumDo')?.value;
     this.natjecajService.createNatjecaj(this.natjecajModel).subscribe(data => {
       this.router.navigateByUrl('/list-natjecajs');
     }, error => {
       console.log('Error occurred');
     })
   }
+
+  
 }

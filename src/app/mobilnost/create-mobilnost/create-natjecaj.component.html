@@ -10,7 +10,20 @@
             <textarea type="text" [formControlName]="'description'" style="width: 100%; margin-top: 5px"
               placeholder="Description"></textarea>
               
-             
+              
+              <mat-form-field appearance="fill">
+                <mat-label>Enter a date range</mat-label>
+                <mat-date-range-input [rangePicker]="picker">
+                  <input matStartDate placeholder="Od" formControlName="datumOd">
+                  <input matEndDate placeholder="Do" formControlName="datumDo">
+                </mat-date-range-input>
+                <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+              </mat-form-field>
+
+              <textarea type="text" [formControlName]="'ustanova'" style="width: 100%; margin-top: 5px"
+              placeholder="Ustanova"></textarea>
               
             <div>
               <div style="margin-top: 5px" class="float-right">
@@ -18,9 +31,10 @@
                 <button class="btnCreateNatjecaj">Create</button>
               </div>
             </div>
-          </div>
-        </form>
-      </div>
+         
+        
 
-    </div>
-  </div>
+
+    
+
+</div>
